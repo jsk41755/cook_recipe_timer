@@ -2,42 +2,45 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<GridPane alignment="CENTER" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<GridPane alignment="CENTER" hgap="10" prefHeight="88.0" prefWidth="213.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <columnConstraints>
       <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
+      <ColumnConstraints maxWidth="62.0" minWidth="62.0" prefWidth="62.0" />
+      <ColumnConstraints maxWidth="60.0" minWidth="60.0" prefWidth="60.0" />
    </columnConstraints>
    <rowConstraints>
+      <RowConstraints />
       <RowConstraints maxHeight="40.0" minHeight="31.0" prefHeight="40.0" />
       <RowConstraints maxHeight="9.0" minHeight="0.0" prefHeight="0.0" />
       <RowConstraints maxHeight="9.0" minHeight="0.0" prefHeight="0.0" />
    </rowConstraints>
    <children>
-      <Label fx:id="text" text="30:00" textAlignment="CENTER" GridPane.columnSpan="3">
+      <Label fx:id="text" text="00:00" textAlignment="CENTER" GridPane.columnSpan="3" GridPane.rowIndex="1">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button id="btnStart" mnemonicParsing="false" onAction="#btnStartClick" style="-fx-background-color: white;" text="Start" GridPane.columnIndex="0" GridPane.rowIndex="1">
+      <Button id="btnStart" mnemonicParsing="false" onAction="#btnStartClick" style="-fx-background-color: white;" text="Start" GridPane.rowIndex="2">
          <font>
             <Font size="15.0" />
          </font>
       </Button>
-       <Button id="btnPause" mnemonicParsing="false" onAction="#btnPauseClick" style="-fx-background-color: white;" text="Pause" GridPane.columnIndex="1" GridPane.rowIndex="1">
+       <Button id="btnPause" mnemonicParsing="false" onAction="#btnPauseClick" style="-fx-background-color: white;" text="Pause" GridPane.columnIndex="1" GridPane.rowIndex="2">
            <font>
                <Font size="15.0" />
            </font>
        </Button>
-       <Button id="btnReset" mnemonicParsing="false" onAction="#btnResetClick" style="-fx-background-color: white;" text="Reset" GridPane.columnIndex="2" GridPane.rowIndex="1">
+       <Button id="btnReset" mnemonicParsing="false" onAction="#btnResetClick" style="-fx-background-color: white;" text="Reset" GridPane.columnIndex="2" GridPane.rowIndex="2">
            <font>
                <Font size="15.0" />
            </font>
        </Button>
+      <TextField fx:id="timesettt" promptText="   time" GridPane.columnIndex="2" GridPane.rowIndex="1" />
    </children>
 </GridPane>

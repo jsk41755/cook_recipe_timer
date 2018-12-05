@@ -12,6 +12,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 //import tw.fatminmin.javafx.timer.CountDownTimer;
 import javafx.stage.WindowEvent;
@@ -20,10 +22,15 @@ public class MainController implements Initializable{
 	
 	@FXML
     private Label text;
+	@FXML
+	private TextField timesettt;
+	
+	static public int a = 800;
 
     @FXML
-    protected void btnResetClick(ActionEvent event) {
-        CountDownTimer.getTimer().reset();
+    public void btnResetClick(ActionEvent event) {
+    	a = Integer.parseInt(timesettt.getText());
+    	CountDownTimer.getTimer().reset();
     }
 
     public void btnStartClick(ActionEvent event) {
@@ -62,7 +69,7 @@ public class MainController implements Initializable{
           });
   	
   		text = (Label) root.lookup("#text");
-  	       text.setText("30:00");
+  	       text.setText("00:00");
   	      CountDownTimer.getTimer().setLabel(text);
 }
 	

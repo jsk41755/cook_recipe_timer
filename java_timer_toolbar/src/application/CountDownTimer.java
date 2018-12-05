@@ -1,7 +1,9 @@
 package application;
 
 import javafx.application.Platform;
+import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -16,7 +18,7 @@ public class CountDownTimer {
     private Timer mTimer;
     private Label mLabel;
     private int timeLeft;
-
+  
     public void start() {
         if (mTimer == null) {
             mTimer = new Timer();
@@ -34,14 +36,17 @@ public class CountDownTimer {
             }, 1000, 1000);
         }
     }
+    
     public void pause() {
         if (mTimer != null) {
             mTimer.cancel();
             mTimer = null;
         }
     }
+
     public void reset() {
-        timeLeft = 1800;
+    	timeLeft = MainController.a;
+    	 mLabel.setText(settime());
     }
     public void stop() {
         pause();
@@ -50,7 +55,13 @@ public class CountDownTimer {
         mLabel = label;
     }
     public CountDownTimer() {
-        timeLeft = 1800;
+        timeLeft = MainController.a;
+    }
+    
+    public String settime() {
+    	int minutes = timeLeft / 60;
+        int seconds = timeLeft % 60;
+    	return String.format("%02d:%02d", minutes, seconds);
     }
     private String formatTime() {
         int minutes = timeLeft / 60;
